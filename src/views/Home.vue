@@ -1,38 +1,6 @@
 <template>
   <transition name="scaleUp">
     <div class="page" id="start">
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
-     <p>上滑切换页面</p>
     </div>
   </transition>
 </template>
@@ -168,10 +136,25 @@ export default {
 	#start{
 		width: 100%;
 		height: 100%;
+		background: url(../../public/img/homeBG.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		background-attachment: fixed;
+		-webkit-background-attachment: fixed;
+	}
+	#web_bg{
+	  
 	}
 	html,body{
 		height: 100%;
 		width: 100%;
 		overflow: hidden;
+	}
+	
+	@media screen and (max-height: 670px){
+		#start{
+			//background-size: cover;
+		}
 	}
 </style>
