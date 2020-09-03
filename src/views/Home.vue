@@ -174,4 +174,20 @@ export default {
 		width: 100%;
 		overflow: hidden;
 	}
+    .page{
+        animation:pageShow 2s;
+        -moz-animation:pageShow 2s;
+        -webkit-animation:pageShow 2s;
+        -o-animation:pageShow 2s;
+        height: 100%;
+        width: 100%;
+    }
+    @-webkit-keyframes page{
+     0%   {
+      background: #000;
+     }
+     100%  {
+      background: #fff;
+     }
+    }
 </style>
