@@ -1,5 +1,5 @@
 <template>
-  <transition name="scaleDown"></scaleDown>">
+  <transition name="scaleDown">
 	<div class="showPage" id="showPage">
 		哈哈哈哈
 	</div>
