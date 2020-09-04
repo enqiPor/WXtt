@@ -2,10 +2,7 @@
   <transition name="scaleDown">
 	<div class="showPage" id="showPage">
 
-<!--		七个孩子-->
-		<div class="userlist-child chenchen">
 
-		</div>
 	</div>
   </transition>
 </template>
@@ -32,23 +29,24 @@
 	    handleTouchEvent (event) {
 	        switch (event.type) {
 	          case 'touchstart':
-	            this.startX = event.touches[0].pageX
-	            this.startY = event.touches[0].pageY
+	            this.startX = event.touches[0].pageX;
+	            this.startY = event.touches[0].pageY;
 	            break
 	          case 'touchend':
-	            var spanX = event.changedTouches[0].pageX - this.startX
-	            var spanY = event.changedTouches[0].pageY - this.startY
+	            var spanX = event.changedTouches[0].pageX - this.startX;
+	            var spanY = event.changedTouches[0].pageY - this.startY;
 	            // console.log('spanY', spanY)
 				console.log(spanY)
 	            if (spanY > 30) { // 向上
 					this.$router.replace('/')
-	            }
+	            }else if (spanY > -30){
+					this.$router.replace('/childpage')
+				}
 	            break
 	        }
 		}
 	  },
 	  mounted () {
-		
 		//上滑跳转
 		let element = document.getElementById('showPage')
 	      this.addHandler(element, 'touchstart', this.handleTouchEvent)
@@ -133,8 +131,7 @@
 	  transition: all 1s linear;
 	 }
 	.scaleDown-leave-active {
-	  background: red!important;
-	  border: 10px solid red;
+		background: #000;
 	}
 	.showPage{
 		animation:pageShow 2s;
@@ -143,6 +140,15 @@
 		-o-animation:pageShow 2s;
 		height: 100%;
 		width: 100%;
+	}
+	#showPage{
+		width: 100%;
+		height: 100%;
+		background: url(../../public/img-bg/xingqiu_bg1.png) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		background-attachment: fixed;
+		-webkit-background-attachment: fixed;
 	}
 	@-webkit-keyframes pageShow
 	{
@@ -154,11 +160,5 @@
 		}
 	}
 
-	/*七个孩子*/
-	.userlist-child{
-		width: 100%;
-		height: 100%;
-		background: darkcyan;
-		position: relative;
-	}
+
 </style>
