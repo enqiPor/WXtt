@@ -16,13 +16,13 @@
 				<img src='../../public/images/z11.png' alt="">
 				<img src='../../public/images/z12.png' alt="">
 				<img src='../../public/images/z13.png' alt="">
-				<img src='../../public/images/z14.png' alt="">
-				<img src='../../public/images/z15.png' alt="">
+				<img src='../../public/images/z13.png' alt="">
+				<img src='../../public/images/z13.png' alt="">
 				<img src='../../public/images/z16.png' alt="">
 				<p></p>
 				<img src='../../public/images/z17.png' alt="">
 				<img src='../../public/images/z18.png' alt="">
-				<img src='../../public/images/z19.png' alt="">
+				<img src='../../public/images/z18.png' alt="">
 				<img src='../../public/images/z20.png' alt="">
 				<img src='../../public/images/z21.png' alt="">
 				<img src='../../public/images/z22.png' alt="">
@@ -33,7 +33,7 @@
 				<img src='../../public/images/z27.png' alt="">
 				<img src='../../public/images/z28.png' alt="">
 				<img src='../../public/images/z29.png' alt="">
-				<img src='../../public/images/z30.png' alt="">
+				<img src='../../public/images/z29.png' alt="">
 				<img src='../../public/images/z31.png' alt="">
 				<p></p>
 				<img src='../../public/images/z32.png' alt="">
@@ -51,7 +51,7 @@
 				<img src='../../public/images/z44.png' alt="">
 				<p></p>
 				<img src='../../public/images/z45.png' alt="">
-				<img src='../../public/images/z45.png' alt="">
+				<img src='../../public/images/z46.png' alt="">
 				<img src='../../public/images/z47.png' alt="">
 				<img src='../../public/images/z48.png' alt="">
 				<img src='../../public/images/z49.png' alt="">
@@ -156,8 +156,8 @@
 		//微信分享
 		let imgUrl="";
 		let weiXinDataObj=JSON.parse(window.localStorage.getItem("weiXinDataObj"));
-		let shareTitle="宝宝 评估报告";//分享title内容
-		let shareCont="VB-MAPP综合评估及改善计划";//分享内容
+		let shareTitle="99公益日，一起为自闭症孩子助力免费课";//分享title内容
+		let shareCont="你的每一次转发，都有一个命运将被改变";//分享内容
 		let shareLink=weiXinDataObj.link;//分享链接
 		wx.config({
 			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -230,6 +230,7 @@
 	.text_cont{
 		width: 100%;
 		height: 100%;
+		background: #000;
 	}
 	.img_show{
 		text-align: center;
