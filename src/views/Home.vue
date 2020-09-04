@@ -1,7 +1,7 @@
 <template>
   <transition name="scaleUp">
-    <div class="page" id="start">
-		<div class="looding">
+    <div class="page" id="start" :class="bjType">
+		<div class="looding" v-show="contTypeO">
 			<div>
 				<p class="lodding1" id="lodding_img">
 					<img src="../../public/images/d1.png" alt="">
@@ -29,6 +29,16 @@
 				<p></p>
 			</div>
 		</div>
+		<div class="vide-box"  v-show="contTypeT">
+			<div class="video-style">
+				<video src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
+			</div>
+			<div class="slide-uop">
+				<p>滑动了解更多</p>
+				<p class="slide-uop-d">1111</p>
+			</div>
+		</div>
+		<div class="mask" :class="maskActive" v-show="showType"></div>
     </div>
   </transition>
 </template>
@@ -37,31 +47,146 @@
 
 export default {
   name: 'Home',
+  data(){
+	return{
+		maskActive:'',
+		showType:false,
+		contTypeO:true,
+		contTypeT:false,
+		bjType:'bjType1'
+	}
+  },
   mounted () {
-	let imgLengt = $('.lodding1 img');
-	let index = 0;
-	let timer=setInterval(function(){
-		$('.lodding1 img').hide().each(function(thisIndex){
-			if(index == thisIndex){
-				$(this).show()
-			}
+	if(window.location.href.split("?type=")[1] == "1"){
+		this.showType=true;
+		this.contTypeO=false;
+		this.contTypeT=true;
+		this.bjType="bjType2";
+		$('.mask').animate({
+				opacity: 1
 		})
-		index++;
-		if(index == 20){
-			clearInterval(timer);
-		}
-	},300)
+		setTimeout(function(){
+				$('.mask').animate({
+					opacity: 0
+				})
+		},600);
+		//上滑跳转
+		let element = document.getElementById('start')
+		  this.addHandler(element, 'touchstart', this.handleTouchEvent)
+		  this.addHandler(element, 'touchend', this.handleTouchEvent)
+		  this.addHandler(element, 'touchmove', this.handleTouchEvent)
+	}else{
+		this.loadding();
+	}
 	//禁止页面下拉
 	document.body.addEventListener('touchmove', function (e) {
        e.preventDefault()
     }, { passive: false })
   },
   methods:{
-	  
+	 loadding(){
+		 let thisObj=this;
+		 let imgLengt = $('.lodding1 img');
+		 let index = 0;
+		 let timer=setInterval(function(){
+		 	$('.lodding1 img').hide().each(function(thisIndex){
+		 		if(index == thisIndex){
+		 			$(this).show()
+		 		}
+		 	})
+		 	index++;
+		 	if(index == 21){
+		 		clearInterval(timer);
+				thisObj.showType=true;
+				$('.mask').animate({
+					opacity: 1
+				})
+				setTimeout(function(){
+					thisObj.contTypeO=false;
+					thisObj.contTypeT=true;
+					$('.mask').animate({
+						opacity: 0
+					})
+				},600);
+				let element = document.getElementById('start')
+				  thisObj.addHandler(element, 'touchstart', thisObj.handleTouchEvent)
+				  thisObj.addHandler(element, 'touchend', thisObj.handleTouchEvent)
+				  thisObj.addHandler(element, 'touchmove', thisObj.handleTouchEvent)
+		 	}
+		 },100)
+	 },addHandler (element, type, handler) {
+	        if (element.addEventListener) {
+	          element.addEventListener(type, handler, false)
+	        } else if (element.attachEvent) {
+	          element.attachEvent('on' + type, handler)
+	        } else {
+	          element['on' + type] = handler
+	        }
+	      },
+	    handleTouchEvent (event) {
+	        switch (event.type) {
+	          case 'touchstart':
+	            this.startX = event.touches[0].pageX
+	            this.startY = event.touches[0].pageY
+	            break
+	          case 'touchend':
+	            var spanX = event.changedTouches[0].pageX - this.startX
+	            var spanY = event.changedTouches[0].pageY - this.startY
+	            // console.log('spanY', spanY)
+				console.log(spanY)
+	            if (spanY < -30) { // 向上
+					this.$router.replace('/userList')
+	            }
+	            break
+	        }
+		}
   }
 }
 </script>
 <style lang="scss">
+	.video{
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+	.video-style video{
+		height: 200px;
+		width: 100%;
+	}
+	.slide-uop{
+		position: absolute;
+		bottom: 20px;
+		text-align: center;
+		width: 100%;
+		left: 0;
+		
+	}
+	.slide-uop-d{
+		color: red;
+		animation: bounce-down 2s linear infinite;
+		margin-top: 14px;
+	}
+	@-webkit-keyframes bounce-down {
+	  25% {-webkit-transform: translateY(-3px);}
+	  50%, 100% {-webkit-transform: translateY(0);}
+	  75% {-webkit-transform: translateY(3px);}
+	 }
+	 
+	 @keyframes bounce-down {
+	  25% {transform: translateY(-3px);}
+	  50%, 100% {transform: translateY(0);}
+	  75% {transform: translateY(3px);}
+	 }
+	.mask{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		z-index: 2;
+		opacity: 0;
+	}
 	.looding{
 		position: absolute;
 		top: 0;
@@ -82,9 +207,20 @@ export default {
 		-moz-justify-content: center;
 		-o-justify-content: center;
 	}
+	.looding1{
+		background:#fbda5c;
+	}
 	.looding div p:first-child{
 		width: 230px;
 		height: 16px;
+	}
+	.looding div p:last-child{
+		width: 60px;
+		height: 14px;
+		background: url(../../public/images/Loading.png) no-repeat;
+		background-size: 100% 100%;
+		margin: 0 auto;
+		margin-top: 15px;
 	}
 	.looding div p img{
 		display: none;
@@ -103,7 +239,9 @@ export default {
 	#start{
 		width: 100%;
 		height: 100%;
-		background: url(../../public/images/max_home_bj.png);
+	}
+	.bjType1{
+		background: url(../../public/images/max_home_bj.jpg);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
@@ -118,26 +256,27 @@ export default {
 	}
 	
 	@media screen and (max-height: 670px){
-		#start{
+		.bjType1{
 			//background-size: cover;
-			background: url(../../public/images/min_home_bj.png) no-repeat;
+			background: url(../../public/images/min_home_bj.jpg) no-repeat;
 			background-size: 100% 100%;
 		}
 	}
-    .page{
+    .mask_active{
         animation:pageShow 2s;
         -moz-animation:pageShow 2s;
         -webkit-animation:pageShow 2s;
         -o-animation:pageShow 2s;
+		-webkit-animation-iteration-count:1;
         height: 100%;
         width: 100%;
     }
-    @-webkit-keyframes page{
-     0%   {
-      background: #000;
-     }
-     100%  {
-      background: #fff;
-     }
+    @-webkit-keyframes pageShow{
+		 0%   {
+		  opacity: 1;
+		 }
+		 100%  {
+		  opacity: 0;
+		 }
     }
 </style>
