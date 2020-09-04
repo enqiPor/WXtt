@@ -1,6 +1,5 @@
 <template>
-	 <transition name="scaleUp">
-	    <div class="text_cont">
+	    <div class="text_cont" id="text_cont">
 			<div class="img_show">
 				<img src='../../public/images/z1.png' alt="">
 				<img src='../../public/images/z2.png' alt="">
@@ -74,7 +73,6 @@
 			</div>
 			<div class="mask" :class="maskActive" v-show="showType"></div>
 	    </div>
-	  </transition>
 </template>
 
 <script>
@@ -84,7 +82,8 @@
 	      return {
 	        startX: 0, // 鼠标开始点击的x坐标
 	        startY: 0 ,
-			showType:true
+			index:0,
+			showType:false
 			}
 	  },
 	  methods: {
@@ -107,15 +106,17 @@
 	            var spanX = event.changedTouches[0].pageX - this.startX
 	            var spanY = event.changedTouches[0].pageY - this.startY
 	            // console.log('spanY', spanY)
-	            if (spanY < -30) { // 向上
-					this.$router.replace('/userlist')
+	            if (spanY > 30) { // 向下
+					this.$router.replace('/?type=1')
 	            }
 	            break
 	        }
 		},
 		showTetx(){
+			var thisObj=this;
 			let imgLengt = $('.img_show img');
-			let index = 0;
+			let index = this.index;
+			console.log(index)
 			let timer=setInterval(function(){
 				$('.img_show img').each(function(thisIndex){
 					if(index == thisIndex){
@@ -125,11 +126,35 @@
 				index++;
 				if(index == $('.img_show img').length){
 					clearInterval(timer);
+					setTimeout(function(){
+						thisObj.showType=true;
+						$('.mask').animate({
+							opacity: 1
+						})
+						setTimeout(function(){
+							$('.mask').animate({
+								opacity: 0
+							})
+						},600);
+						setTimeout(function(){
+							thisObj.showType=false;
+							thisObj.$router.replace('/userlist');
+						},800);
+					},1000)
 				}
 			},200)
 		}
 	  },
+	  created() {
+		  let highestTimeoutId = setTimeout(";");
+	      for (let i = 0 ; i < highestTimeoutId ; i++) {
+		    clearTimeout(i); 
+		  }
+
+	  },
 	  mounted () {
+		  this.index = 0;
+		  this.showType = true;
 		  $('.mask').animate({
 		  		opacity: 1
 		  })
@@ -137,10 +162,10 @@
 		  		$('.mask').animate({
 		  			opacity: 0
 		  		})
-		  },600);
+		  },400);
 		  setTimeout(function(){
 		  		this.showType=false;
-		  },800);
+		  },600);
 		this.showTetx();
 		//禁止页面下拉
 		document.body.addEventListener('touchmove', function (e) {
@@ -148,7 +173,7 @@
 	    }, { passive: false })
 		
 		//上滑跳转
-		let element = document.getElementById('video')
+		let element = document.getElementById('text_cont')
 	      this.addHandler(element, 'touchstart', this.handleTouchEvent)
 	      this.addHandler(element, 'touchend', this.handleTouchEvent)
 	      this.addHandler(element, 'touchmove', this.handleTouchEvent)
@@ -230,7 +255,8 @@
 	.text_cont{
 		width: 100%;
 		height: 100%;
-		background: #000;
+		background: url(../../public/img-bg/xingqiu_bg1.png) no-repeat;
+		background-size: 100% 100%;
 	}
 	.img_show{
 		text-align: center;
@@ -245,7 +271,7 @@
 		opacity: 0;
 	}
 	.img_show img:nth-child(3)~img{
-		margin-top: 25px;
+		margin-top: 22px;
 	}
 	.donghua p{
 			display: inline-block;

@@ -1,5 +1,4 @@
 <template>
-  <transition name="scaleUp">
     <div class="page" id="start" :class="bjType">
 		<div class="looding" v-show="contTypeO">
 			<div>
@@ -31,7 +30,7 @@
 		</div>
 		<div class="vide-box"  v-show="contTypeT">
 			<div class="video-style">
-				<video  x5-playsinline="" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="../../public/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
+				<video  x5-playsinline="" id="video" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="../../public/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
 			</div>
 			<div class="slide-uop">
 				<p></p>
@@ -40,7 +39,6 @@
 		</div>
 		<div class="mask" :class="maskActive" v-show="showType"></div>
     </div>
-  </transition>
 </template>
 
 <script>
@@ -50,35 +48,46 @@ export default {
   data(){
 	return{
 		maskActive:'',
-		showType:false,
+		showType:true,
 		contTypeO:true,
 		contTypeT:false,
 		bjType:'bjType1'
 	}
   },
   mounted () {
+	  //监听视频是否播放
+	  let videoEvn=document.getElementById("video");
+	  let audio = document.getElementById("music");
+	  videoEvn.addEventListener('play', function(e) {
+				audio.pause();
+	  });
+	  videoEvn.addEventListener('pause', function(e) {
+	  			audio.play();
+	  });
+	  videoEvn.addEventListener('ended', function(e) {
+	  			audio.play();
+	  });
 	if(window.location.href.split("?type=")[1] == "1"){
+		var thisObj=this;
 		this.showType=true;
 		this.contTypeO=false;
 		this.contTypeT=true;
 		this.bjType="bjType2";
-		$('.mask').animate({
-				opacity: 1
-		})
 		setTimeout(function(){
 				$('.mask').animate({
 					opacity: 0
 				})
-		},600);
+		},300);
 		setTimeout(function(){
-				this.showType=false;
-		},800);
+				thisObj.showType=false;
+		},600);
 		//上滑跳转
 		let element = document.getElementById('start')
 		  this.addHandler(element, 'touchstart', this.handleTouchEvent)
 		  this.addHandler(element, 'touchend', this.handleTouchEvent)
 		  this.addHandler(element, 'touchmove', this.handleTouchEvent)
 	}else{
+		this.showType=false;
 		this.loadding();
 	}
 	//禁止页面下拉
@@ -181,10 +190,10 @@ export default {
 					$('.mask').animate({
 						opacity: 0
 					})
-				},600);
+				},300);
 				setTimeout(function(){
 					thisObj.showType=false;
-				},800)
+				},600)
 				let element = document.getElementById('start')
 				  thisObj.addHandler(element, 'touchstart', thisObj.handleTouchEvent)
 				  thisObj.addHandler(element, 'touchend', thisObj.handleTouchEvent)
@@ -201,7 +210,6 @@ export default {
 	        }
 	      },
 	    handleTouchEvent (event) {
-			$('.video-style').fadeOut();
 	        switch (event.type) {
 	          case 'touchstart':
 	            this.startX = event.touches[0].pageX
@@ -211,9 +219,8 @@ export default {
 	            var spanX = event.changedTouches[0].pageX - this.startX
 	            var spanY = event.changedTouches[0].pageY - this.startY
 	            // console.log('spanY', spanY)
-				console.log(spanY)
 	            if (spanY < -30) { // 向上
-					this.$router.push('/text')
+					this.$router.replace('/text');
 	            }
 	            break
 	        }
@@ -222,6 +229,9 @@ export default {
 }
 </script>
 <style lang="scss">
+	.vide-box,.video-style{
+		width: 100%;
+	}
 	.video{
 		height: 80%;
 		width: 100%;
@@ -283,7 +293,7 @@ export default {
 		height: 100%;
 		background: #000;
 		z-index: 2;
-		opacity: 0;
+		opacity: 1;
 	}
 	.looding{
 		position: absolute;
@@ -392,6 +402,11 @@ export default {
 			position: absolute;
 			left: 0;
 			top: 180px;
+		}
+	}
+	@media screen and (min-width: 400px){
+		.video-style{
+			height: 240px;
 		}
 	}
 </style>

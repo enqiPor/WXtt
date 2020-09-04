@@ -1,5 +1,4 @@
 <template>
-  <transition name="scaleDown">
 	<div class="showPage" id="showPage">
         <div class="child-text">
             <img src="../../public/images/dian.png" alt="">
@@ -50,9 +49,8 @@
             <img src="../../public/images/fenxiang.png" alt="" class="share-image" @click="shareFunc" v-show="shareHidden">
             <img src="../../public/images/baocun.png" alt="" class="save-image" v-show="saveHidden">
         </div>
-
+		<div class="mask" :class="maskActive" v-show="showType"></div>
 	</div>
-  </transition>
 </template>
 
 <script>
@@ -65,7 +63,8 @@
               childStatus:'',
               childImage:'',
               shareHidden:true,
-              saveHidden:false
+              saveHidden:false,
+			  showType:false
           }
 	  },
 	  methods: {
@@ -139,17 +138,28 @@
 	          case 'touchend':
 	            var spanX = event.changedTouches[0].pageX - this.startX;
 	            var spanY = event.changedTouches[0].pageY - this.startY;
-	            // console.log('spanY', spanY)
-	            // if (spanY > 30) { // 向上
-				// 	this.$router.replace('/text')
-	            // }else if (spanY > -30){
-				// 	this.$router.replace('/childpage')
-				// }
+	            console.log('spanY', spanY)
+	            if (spanY > 30) { // 向上
+					this.$router.replace('/?type=1')
+	            }
 	            break
 	        }
 		}
 	  },
 	  mounted () {
+		  var thisObj=this;
+		  this.showType = true;
+		  $('.mask').animate({
+		  		opacity: 1
+		  })
+		  setTimeout(function(){
+		  		$('.mask').animate({
+		  			opacity: 0
+		  		})
+		  },400);
+		  setTimeout(function(){
+		  		thisObj.showType=false;
+		  },600);
 		//上滑跳转
 		let element = document.getElementById('showPage')
 	      this.addHandler(element, 'touchstart', this.handleTouchEvent)
@@ -159,8 +169,8 @@
 		//微信分享
 		let imgUrl="";
 		let weiXinDataObj=JSON.parse(window.localStorage.getItem("weiXinDataObj"));
-		let shareTitle="宝宝 评估报告";//分享title内容
-		let shareCont="VB-MAPP综合评估及改善计划";//分享内容
+		let shareTitle="99公益日，一起为自闭症孩子助力免费课";//分享title内容
+		let shareCont="你的每一次转发，都有一个命运将被改变";//分享内容
 		let shareLink=weiXinDataObj.link;//分享链接
 		wx.config({
 			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -297,8 +307,8 @@
     .close-image{
         width: 22px;
         height: 22px;
-        top: 44px;
-        right: 44px;
+        top: 16px;
+        right: 16px;
     }
     .share-image{
         width: 109px;
@@ -341,7 +351,7 @@
         background-size: 100% 100%;
         top: -46px;
         right: 59px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 2.8s linear infinite;
     }
     .box-haohao-qiu{
         width: 61px;
@@ -360,7 +370,7 @@
         background-size: 100% 100%;
         top: -39px;
         left: -21px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 2.6s linear infinite;
     }
     .box-chenchen-qiu{
         width: 89.5px;
@@ -379,7 +389,7 @@
         background-size: 100% 100%;
         top: -52px;
         right: 65px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 2.5s linear infinite;
     }
     .box-maidou-qiu{
         width: 115px;
@@ -398,7 +408,7 @@
         background-size: 100% 100%;
         top: -58px;
         left: 64px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 2.9s linear infinite;
     }
     .box-jiangyi-qiu{
              width: 42px;
@@ -417,7 +427,7 @@
         background-size: 100% 100%;
         top: -50px;
         right: 25px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 3s linear infinite;
     }
     .box-rongrong-qiu{
              width: 55.5px;
@@ -436,7 +446,7 @@
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 3.2s linear infinite;
     }
     .box-weili-qiu{
         width: 92px;
@@ -455,6 +465,6 @@
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
-        animation: bounce-down 1.5s linear infinite;
+        animation: bounce-down 2.4s linear infinite;
     }
 </style>
