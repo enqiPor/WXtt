@@ -173,7 +173,7 @@ export default {
 		margin-left: 10px;
 	}
 	.scaleUp-enter-active, .scaleUp-leave-active {
-	  transition: all 1s linear;
+	   transition: all 1s linear;
 	 }
 	.scaleUp-leave-active {
 	  background: #000;
