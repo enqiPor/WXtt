@@ -1,7 +1,12 @@
 <template>
   <transition name="scaleDown">
 	<div class="showPage" id="showPage">
-
+<!--        七个孩子海报-->
+<!--        <div class="child-box chenchen">-->
+<!--            <img src="../../public/images/chenchen.jpg" alt="" class="chiild-image">-->
+<!--            <img src="../../public/images/guanbi.png" alt="" class="close-image">-->
+<!--            <img src="../../public/images/fenxiang.png" alt="" class="share-image">-->
+<!--        </div>-->
 
 	</div>
   </transition>
@@ -12,9 +17,9 @@
 	  name: 'Home',
 	  data () {
 	      return {
-	        startX: 0, // 鼠标开始点击的x坐标
-	        startY: 0 ,
-			}
+	          startX: 0, // 鼠标开始点击的x坐标
+	          startY: 0 ,
+          }
 	  },
 	  methods: {
 	    addHandler (element, type, handler) {
@@ -37,11 +42,11 @@
 	            var spanY = event.changedTouches[0].pageY - this.startY;
 	            // console.log('spanY', spanY)
 				console.log(spanY)
-	            if (spanY > 30) { // 向上
-					this.$router.replace('/')
-	            }else if (spanY > -30){
-					this.$router.replace('/childpage')
-				}
+	            // if (spanY > 30) { // 向上
+				// 	this.$router.replace('/')
+	            // }else if (spanY > -30){
+				// 	this.$router.replace('/childpage')
+				// }
 	            break
 	        }
 		}
@@ -159,6 +164,35 @@
 			background: #fff;
 		}
 	}
-
-
+    .child-box{
+        width: 100%;
+        height: 100%;
+        background: url("../../public/images/bag.png") no-repeat;
+        background-size: 100% 100%;
+        box-sizing: border-box;
+        position: relative;
+        img{
+            display: block;
+            position: absolute;
+        }
+    }
+    .chiild-image{
+        width: 83%;
+        left: 50%;
+        margin-left: -41.5%;
+        top: 30px;
+    }
+    .close-image{
+        width: 22px;
+        height: 22px;
+        top: 44px;
+        right: 44px;
+    }
+    .share-image{
+        width: 109px;
+        height: 38.5px;
+        bottom: 22px;
+        left: 50%;
+        margin-left: -54.5px;
+    }
 </style>

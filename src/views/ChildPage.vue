@@ -2,35 +2,8 @@
     <transition name="child">
         <div class="child" id="child">
 
-            !--		七个孩子-->
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
-            <div class="userlist-child chenchen">
-                <img src="../../public/images/guanbi.png" alt="关闭">
-                <img src="../../public/images/fenxiang.png" alt="分享">
-            </div>
+
+
         </div>
     </transition>
 </template>
@@ -167,6 +140,15 @@
         height: 100%;
         width: 100%;
     }
+    #child{
+        width: 100%;
+        height: 100%;
+        background: url(../../public/images/bag.png) no-repeat;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        background-attachment: fixed;
+        -webkit-background-attachment: fixed;
+    }
     @-webkit-keyframes child{
         0%   {
             background: #000;
@@ -175,34 +157,6 @@
             background: #fff;
         }
     }
-    /*七个孩子*/
-    .userlist-child{
-        width: 100%;
-        height: 100%;
-        background: darkcyan;
-        position: relative;
-        display: none;
-        img{
-            position: absolute;
-            display: block;
-        }
-    }
-    .userlist-child img:first-child{
-        width: 22px;
-        height: 22px;
-        top: 44px;
-        right: 44px;
-    }
-    .userlist-child img:last-child{
-        width: 109px;
-        height: 38.5px;
-        left: 50%;
-        margin-left: -54.5px;
-        bottom: 18px;
-    }
-    /*辰辰*/
-    .chenchen{
-        background: url("../../public/images/bag.png") no-repeat;
-        background-size: 100% 100%;
-    }
+
+
 </style>
