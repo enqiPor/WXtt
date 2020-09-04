@@ -1,75 +1,75 @@
 <template>
 	    <div class="text_cont" id="text_cont">
 			<div class="img_show">
-				<img src='../../public/images/z1.png' alt="">
-				<img src='../../public/images/z2.png' alt="">
-				<img src='../../public/images/z3.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z1.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z2.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z3.png' alt="">
 				<p></p>
-				<img src='../../public/images/z4.png' alt="">
-				<img src='../../public/images/z5.png' alt="">
-				<img src='../../public/images/z6.png' alt="">
-				<img src='../../public/images/z7.png' alt="">
-				<img src='../../public/images/z8.png' alt="">
-				<img src='../../public/images/z9.png' alt="">
-				<img src='../../public/images/z10.png' alt="">
-				<img src='../../public/images/z11.png' alt="">
-				<img src='../../public/images/z12.png' alt="">
-				<img src='../../public/images/z13.png' alt="">
-				<img src='../../public/images/z13.png' alt="">
-				<img src='../../public/images/z13.png' alt="">
-				<img src='../../public/images/z16.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z4.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z5.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z6.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z7.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z8.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z9.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z10.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z11.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z12.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z13.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z13.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z13.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z16.png' alt="">
 				<p></p>
-				<img src='../../public/images/z17.png' alt="">
-				<img src='../../public/images/z18.png' alt="">
-				<img src='../../public/images/z18.png' alt="">
-				<img src='../../public/images/z20.png' alt="">
-				<img src='../../public/images/z21.png' alt="">
-				<img src='../../public/images/z22.png' alt="">
-				<img src='../../public/images/z23.png' alt="">
-				<img src='../../public/images/z24.png' alt="">
-				<img src='../../public/images/z25.png' alt="">
-				<img src='../../public/images/z26.png' alt="">
-				<img src='../../public/images/z27.png' alt="">
-				<img src='../../public/images/z28.png' alt="">
-				<img src='../../public/images/z29.png' alt="">
-				<img src='../../public/images/z29.png' alt="">
-				<img src='../../public/images/z31.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z17.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z18.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z18.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z20.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z21.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z22.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z23.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z24.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z25.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z26.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z27.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z28.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z29.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z29.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z31.png' alt="">
 				<p></p>
-				<img src='../../public/images/z32.png' alt="">
-				<img src='../../public/images/z33.png' alt="">
-				<img src='../../public/images/z34.png' alt="">
-				<img src='../../public/images/z35.png' alt="">
-				<img src='../../public/images/z36.png' alt="">
-				<img src='../../public/images/z37.png' alt="">
-				<img src='../../public/images/z38.png' alt="">
-				<img src='../../public/images/z39.png' alt="">
-				<img src='../../public/images/z40.png' alt="">
-				<img src='../../public/images/z41.png' alt="">
-				<img src='../../public/images/z42.png' alt="">
-				<img src='../../public/images/z43.png' alt="">
-				<img src='../../public/images/z44.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z32.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z33.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z34.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z35.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z36.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z37.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z38.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z39.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z40.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z41.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z42.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z43.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z44.png' alt="">
 				<p></p>
-				<img src='../../public/images/z45.png' alt="">
-				<img src='../../public/images/z46.png' alt="">
-				<img src='../../public/images/z47.png' alt="">
-				<img src='../../public/images/z48.png' alt="">
-				<img src='../../public/images/z49.png' alt="">
-				<img src='../../public/images/z50.png' alt="">
-				<img src='../../public/images/z51.png' alt="">
-				<img src='../../public/images/z52.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z45.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z46.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z47.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z48.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z49.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z50.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z51.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z52.png' alt="">
 				<p></p>
-				<img src='../../public/images/z53.png' alt="">
-				<img src='../../public/images/z54.png' alt="">
-				<img src='../../public/images/z55.png' alt="">
-				<img src='../../public/images/z56.png' alt="">
-				<img src='../../public/images/z57.png' alt="">
-				<img src='../../public/images/z58.png' alt="">
-				<img src='../../public/images/z59.png' alt="">
-				<img src='../../public/images/z60.png' alt="">
-				<img src='../../public/images/z61.png' alt="">
-				<img src='../../public/images/z62.png' alt="">
-				<img src='../../public/images/z63.png' alt="">
-				<img src='../../public/images/z64.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z53.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z54.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z55.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z56.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z57.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z58.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z59.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z60.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z61.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z62.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z63.png' alt="">
+				<img src='https://ingcare.oss-cn-beijing.aliyuncs.com/images/z64.png' alt="">
 			</div>
 			<div class="mask" :class="maskActive" v-show="showType"></div>
 	    </div>
@@ -131,11 +131,6 @@
 						$('.mask').animate({
 							opacity: 1
 						})
-						setTimeout(function(){
-							$('.mask').animate({
-								opacity: 0
-							})
-						},600);
 						setTimeout(function(){
 							thisObj.showType=false;
 							thisObj.$router.replace('/userlist');
@@ -255,7 +250,7 @@
 	.text_cont{
 		width: 100%;
 		height: 100%;
-		background: url(../../public/img-bg/xingqiu_bg1.jpg) no-repeat;
+		background: url(http://ingcare.oss-cn-beijing.aliyuncs.com/img-bg/xingqiu_bg1.jpg) no-repeat;
 		background-size: 100% 100%;
 	}
 	.img_show{

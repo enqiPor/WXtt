@@ -3,34 +3,34 @@
 		<div class="looding" v-show="contTypeO">
 			<div>
 				<p class="lodding1" id="lodding_img">
-					<img src="../../public/images/d1.png" alt="">
-					<img src="../../public/images/d2.png" alt="">
-					<img src="../../public/images/d3.png" alt="">
-					<img src="../../public/images/d4.png" alt="">
-					<img src="../../public/images/d5.png" alt="">
-					<img src="../../public/images/d6.png" alt="">
-					<img src="../../public/images/d7.png" alt="">
-					<img src="../../public/images/d8.png" alt="">
-					<img src="../../public/images/d9.png" alt="">
-					<img src="../../public/images/d10.png" alt="">
-					<img src="../../public/images/d11.png" alt="">
-					<img src="../../public/images/d12.png" alt="">
-					<img src="../../public/images/d13.png" alt="">
-					<img src="../../public/images/d14.png" alt="">
-					<img src="../../public/images/d15.png" alt="">
-					<img src="../../public/images/d16.png" alt="">
-					<img src="../../public/images/d17.png" alt="">
-					<img src="../../public/images/d18.png" alt="">
-					<img src="../../public/images/d19.png" alt="">
-					<img src="../../public/images/d20.png" alt="">
-					<img src="../../public/images/d21.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d1.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d2.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d3.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d4.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d5.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d6.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d7.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d8.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d9.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d10.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d11.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d12.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d13.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d14.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d15.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d16.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d17.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d18.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d19.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d20.png" alt="">
+					<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/d21.png" alt="">
 				</p>
 				<p></p>
 			</div>
 		</div>
 		<div class="vide-box"  v-show="contTypeT">
 			<div class="video-style">
-				<video  x5-playsinline="" id="video" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="../../public/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
+				<video  x5-playsinline="" id="video" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="https://ingcare.oss-cn-beijing.aliyuncs.com/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
 			</div>
 			<div class="slide-uop">
 				<p></p>
@@ -258,14 +258,14 @@ export default {
 	.slide-uop p:first-child{
 		width: 100px;
 		height: 16px;
-		background: url(../../public/images/hua.png) no-repeat;
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/hua.png) no-repeat;
 		background-size: 100%;
 		margin: 0 auto;
 	}
 	.slide-uop p:last-child{
 		width: 42px;
 		height: 28px;
-		background: url(../../public/images/xia.png) no-repeat;
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/xia.png) no-repeat;
 		background-size: 100%;
 		margin: 0 auto;
 		margin-top: 16px;
@@ -325,7 +325,7 @@ export default {
 	.looding div p:last-child{
 		width: 60px;
 		height: 14px;
-		background: url(../../public/images/Loading.png) no-repeat;
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/Loading.png) no-repeat;
 		background-size: 100% 100%;
 		margin: 0 auto;
 		margin-top: 15px;
@@ -349,13 +349,13 @@ export default {
 		height: 100%;
 	}
 	.bjType1{
-		background: url(../../public/images/max_home_bj.jpg);
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/max_home_bj.jpg);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 	}
 	.bjType2{
-		background: url(../../public/images/max_home_bj1.jpg);
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/max_home_bj1.jpg);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
@@ -390,12 +390,12 @@ export default {
 	@media screen and (max-height: 670px){
 		.bjType1{
 			//background-size: cover;
-			background: url(../../public/images/min_home_bj.jpg) no-repeat;
+			background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/min_home_bj.jpg) no-repeat;
 			background-size: 100% 100%;
 		}
 		.bjType2{
 			//background-size: cover;
-			background: url(../../public/images/min_home_bj1.jpg) no-repeat;
+			background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/min_home_bj1.jpg) no-repeat;
 			background-size: 100% 100%;
 		}
 		.video-style{

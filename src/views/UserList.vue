@@ -1,17 +1,17 @@
 <template>
 	<div class="showPage" id="showPage">
         <div class="child-text">
-            <img src="../../public/images/dian.png" alt="">
-            <img src="../../public/images/ji.png" alt="">
-            <img src="../../public/images/tou.png" alt="">
-            <img src="../../public/images/xiang.png" alt="">
-            <img src="../../public/images/liao.png" alt="">
-            <img src="../../public/images/jie.png" alt="">
-            <img src="../../public/images/ta.png" alt="">
-            <img src="../../public/images/men.png" alt="">
-            <img src="../../public/images/de.png" alt="">
-            <img src="../../public/images/gu.png" alt="">
-            <img src="../../public/images/shi.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/dian.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/ji.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/tou.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/xiang.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/liao.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/jie.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/ta.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/men.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/de.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/gu.png" alt="">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/shi.png" alt="">
         </div>
         <div class="airship"></div>
 <!--        包包-->
@@ -46,10 +46,10 @@
         <div class="child-box chenchen" :status="childStatus">
 			<div class="chiild-image-box">
 				<img :src=childImage alt="" class="chiild-image">
-				<img src="../../public/images/guanbi.png" alt="" class="close-image" @click="closeChild">
+				<img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/guanbi.png" alt="" class="close-image" @click="closeChild">
 			</div>
-            <img src="../../public/images/fenxiang.png" alt="" class="share-image" @click="shareFunc" v-show="shareHidden">
-            <img src="../../public/images/baocun.png" alt="" class="save-image" v-show="saveHidden">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/fenxiang.png" alt="" class="share-image" @click="shareFunc" v-show="shareHidden">
+            <img src="https://ingcare.oss-cn-beijing.aliyuncs.com/images/baocun.png" alt="" class="save-image" v-show="saveHidden">
         </div>
 		<div class="mask" :class="maskActive" v-show="showType"></div>
 	</div>
@@ -74,37 +74,37 @@
           chenchenHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 3;
-              this.childImage = require('../../public/images/chenchen.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/chenchen.jpg');
           },
           baobaoHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 1;
-              this.childImage = require('../../public/images/baobao.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/baobao.jpg');
           },
           haohaoHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 2;
-              this.childImage = require('../../public/images/haohao.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/haohao.jpg');
           },
           maidouHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 4;
-              this.childImage = require('../../public/images/maidou.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/maidou.jpg');
           },
           jiangyiHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 5;
-              this.childImage = require('../../public/images/jiangyi.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/jiangyi.jpg');
           },
           rongrongHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 6;
-              this.childImage = require('../../public/images/rongrogn.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/rongrogn.jpg');
           },
           weiliHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 7;
-              this.childImage = require('../../public/images/weli.jpg');
+              this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/weli.jpg');
           },
           closeChild(){
               $(".child-box").fadeOut();
@@ -115,44 +115,44 @@
           shareFunc(){
               var v = this.childStatus;
               if (v == 1){
-                  this.childImage = require('../../public/images/baobao2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/baobao2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if(v == 2){
-                  this.childImage = require('../../public/images/haohao2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/haohao2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if(v == 3){
-                  this.childImage = require('../../public/images/chenchen2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/chenchen2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if (v == 4){
-                  this.childImage = require('../../public/images/maidou2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/maidou2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if (v == 5){
-                  this.childImage = require('../../public/images/jiangyi2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/jiangyi2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if (v == 6){
-                  this.childImage = require('../../public/images/rongrong2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/rongrong2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if (v == 7){
-                  this.childImage = require('../../public/images/weili2.jpg');
-                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  this.childImage = require('https://ingcare.oss-cn-beijing.aliyuncs.com/images/weili2.jpg');
+                  // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
                   this.saveHidden = true;
@@ -279,8 +279,20 @@
 </script>
 
 <style lang="scss">
+	.child-box::before{
+		width: 48px;
+		height: 37px;
+		background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/jt.png) no-repeat;
+		background-size: 100% 100%;
+		content:"";
+		display: inline-block;
+		position: absolute;
+		right: 30px;
+		z-index: 22;
+		top: 4px;
+	}
 	.scaleDown-enter-active, .scaleDown-leave-active {
-	  transition: all 1s linear;
+	   transition: all 1s linear;
 	 }
 	.scaleDown-leave-active {
 		background: #000;
@@ -309,7 +321,7 @@
 	#showPage{
 		width: 100%;
 		height: 100%;
-		background: url(../../public/img-bg/bg1.jpg) no-repeat;
+		background: url(http://ingcare.oss-cn-beijing.aliyuncs.com/img-bg/bg1.jpg) no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 		background-attachment: fixed;
@@ -327,7 +339,7 @@
     .child-box{
         width: 100%;
         height: 100%;
-        background: url("../../public/images/bag.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png") no-repeat;
         background-size: 100% 100%;
         box-sizing: border-box;
         position: relative;
@@ -371,7 +383,7 @@
     .airship{
         width: 154px;
         height: 153px;
-        background: url("../../public/images/feichuan.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/feichuan.png") no-repeat;
         position: absolute;
         background-size: 100% 100%;
         top: 27px;
@@ -381,7 +393,7 @@
         width: 78px;
         height: 51px;
         position: absolute;
-        background: url("../../public/images/qiu1.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu1.png") no-repeat;
         background-size: 100% 100%;
         right: 17px;
         top: 55px;
@@ -390,7 +402,7 @@
         width: 42.5px;
         height: 65.5px;
         position: absolute;
-        background: url("../../public/images/bao.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bao.png") no-repeat;
         background-size: 100% 100%;
         top: -46px;
         right: 59px;
@@ -400,7 +412,7 @@
         width: 61px;
         height: 77px;
         position: absolute;
-        background: url("../../public/images/qiu2.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu2.png") no-repeat;
         background-size: 100% 100%;
         top: 203px;
         left: 82px;
@@ -409,7 +421,7 @@
         width: 43.5px;
         height: 63px;
         position: absolute;
-        background: url("../../public/images/hao.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/hao.png") no-repeat;
         background-size: 100% 100%;
         top: -39px;
         left: -21px;
@@ -419,7 +431,7 @@
         width: 89.5px;
         height: 64px;
         position: absolute;
-        background: url("../../public/images/qiu3.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu3.png") no-repeat;
         background-size: 100% 100%;
         top: 230px;
         right: 21.5px;
@@ -428,7 +440,7 @@
         width: 42.5px;
         height: 65.5px;
         position: absolute;
-        background: url("../../public/images/chen.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/chen.png") no-repeat;
         background-size: 100% 100%;
         top: -52px;
         right: 65px;
@@ -438,7 +450,7 @@
         width: 115px;
         height: 80.5px;
         position: absolute;
-        background: url("../../public/images/qiu4.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu4.png") no-repeat;
         background-size: 100% 100%;
         left: 0px;
         top: 390px;
@@ -447,7 +459,7 @@
         width: 43px;
         height: 63px;
         position: absolute;
-        background: url("../../public/images/mai.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/mai.png") no-repeat;
         background-size: 100% 100%;
         top: -58px;
         left: 64px;
@@ -457,7 +469,7 @@
              width: 42px;
              height: 42px;
              position: absolute;
-             background: url("../../public/images/qiu5.png") no-repeat;
+             background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu5.png") no-repeat;
              background-size: 100% 100%;
              right: 23px;
              top: 378.5px;
@@ -466,7 +478,7 @@
         width: 43px;
         height: 63px;
         position: absolute;
-        background: url("../../public/images/jiang.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/jiang.png") no-repeat;
         background-size: 100% 100%;
         top: -50px;
         right: 25px;
@@ -476,7 +488,7 @@
              width: 55.5px;
              height: 53.5px;
              position: absolute;
-             background: url("../../public/images/qiu6.png") no-repeat;
+             background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu6.png") no-repeat;
              background-size: 100% 100%;
              left: 110px;
              top: 522px;
@@ -485,7 +497,7 @@
         width: 43px;
         height: 63px;
         position: absolute;
-        background: url("../../public/images/rong.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/rong.png") no-repeat;
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
@@ -495,7 +507,7 @@
         width: 92px;
         height: 68.5px;
         position: absolute;
-        background: url("../../public/images/qiu7.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu7.png") no-repeat;
         background-size: 100% 100%;
         right: 51.5px;
         bottom: 0;
@@ -504,7 +516,7 @@
         width: 43px;
         height: 60px;
         position: absolute;
-        background: url("../../public/images/wei.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/wei.png") no-repeat;
         background-size: 100% 100%;
         top: -56px;
         right: -23px;

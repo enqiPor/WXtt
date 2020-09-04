@@ -143,7 +143,7 @@
     #child{
         width: 100%;
         height: 100%;
-        background: url(../../public/images/bag.png) no-repeat;
+        background: url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png) no-repeat;
         background-size: 100% 100%;
         -webkit-background-size: 100% 100%;
         background-attachment: fixed;
