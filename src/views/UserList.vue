@@ -112,7 +112,43 @@
           shareFunc(){
               var v = this.childStatus;
               if (v == 1){
-                  this.childImage = require('../../public/images/baobao2.png');
+                  this.childImage = require('../../public/images/baobao2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if(v == 2){
+                  this.childImage = require('../../public/images/haohao2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if(v == 3){
+                  this.childImage = require('../../public/images/chenchen2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if (v == 4){
+                  this.childImage = require('../../public/images/maidou2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if (v == 5){
+                  this.childImage = require('../../public/images/jiangyi2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if (v == 6){
+                  this.childImage = require('../../public/images/rongrong2.jpg');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }else if (v == 7){
+                  this.childImage = require('../../public/images/weili2.jpg');
                   // $('.child-box').css("background","url(../../public/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
@@ -270,7 +306,7 @@
 	#showPage{
 		width: 100%;
 		height: 100%;
-		background: url(../../public/img-bg/bg1.png) no-repeat;
+		background: url(../../public/img-bg/bg1.jpg) no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 		background-attachment: fixed;
