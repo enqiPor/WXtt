@@ -31,11 +31,11 @@
 		</div>
 		<div class="vide-box"  v-show="contTypeT">
 			<div class="video-style">
-				<video src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
+				<video  x5-playsinline="" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="../../public/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
 			</div>
 			<div class="slide-uop">
-				<p>滑动了解更多</p>
-				<p class="slide-uop-d">1111</p>
+				<p></p>
+				<p class="slide-uop-d"></p>
 			</div>
 		</div>
 		<div class="mask" :class="maskActive" v-show="showType"></div>
@@ -70,6 +70,9 @@ export default {
 					opacity: 0
 				})
 		},600);
+		setTimeout(function(){
+				this.showType=false;
+		},800);
 		//上滑跳转
 		let element = document.getElementById('start')
 		  this.addHandler(element, 'touchstart', this.handleTouchEvent)
@@ -104,16 +107,20 @@ export default {
 				setTimeout(function(){
 					thisObj.contTypeO=false;
 					thisObj.contTypeT=true;
+					thisObj.bjType="bjType2";
 					$('.mask').animate({
 						opacity: 0
 					})
 				},600);
+				setTimeout(function(){
+					thisObj.showType=false;
+				},800)
 				let element = document.getElementById('start')
 				  thisObj.addHandler(element, 'touchstart', thisObj.handleTouchEvent)
 				  thisObj.addHandler(element, 'touchend', thisObj.handleTouchEvent)
 				  thisObj.addHandler(element, 'touchmove', thisObj.handleTouchEvent)
 		 	}
-		 },100)
+		 },80)
 	 },addHandler (element, type, handler) {
 	        if (element.addEventListener) {
 	          element.addEventListener(type, handler, false)
@@ -124,6 +131,7 @@ export default {
 	        }
 	      },
 	    handleTouchEvent (event) {
+			$('.video-style').fadeOut();
 	        switch (event.type) {
 	          case 'touchstart':
 	            this.startX = event.touches[0].pageX
@@ -135,7 +143,7 @@ export default {
 	            // console.log('spanY', spanY)
 				console.log(spanY)
 	            if (spanY < -30) { // 向上
-					this.$router.replace('/userList')
+					this.$router.replace('/text')
 	            }
 	            break
 	        }
@@ -145,26 +153,46 @@ export default {
 </script>
 <style lang="scss">
 	.video{
-		height: 100%;
+		height: 80%;
 		width: 100%;
 		overflow: hidden;
 	}
+	.video-style{
+		position: absolute;
+		left: 0;
+		top: 190px;
+		height: 210px;
+	}
 	.video-style video{
-		height: 200px;
 		width: 100%;
+		height: 100%;
 	}
 	.slide-uop{
 		position: absolute;
-		bottom: 20px;
+		bottom: 30px;
 		text-align: center;
 		width: 100%;
 		left: 0;
 		
 	}
+	.slide-uop p:first-child{
+		width: 100px;
+		height: 16px;
+		background: url(../../public/images/hua.png) no-repeat;
+		background-size: 100%;
+		margin: 0 auto;
+	}
+	.slide-uop p:last-child{
+		width: 42px;
+		height: 28px;
+		background: url(../../public/images/xia.png) no-repeat;
+		background-size: 100%;
+		margin: 0 auto;
+		margin-top: 16px;
+	}
 	.slide-uop-d{
 		color: red;
-		animation: bounce-down 2s linear infinite;
-		margin-top: 14px;
+		animation: bounce-down 1.5s linear infinite;
 	}
 	@-webkit-keyframes bounce-down {
 	  25% {-webkit-transform: translateY(-3px);}
@@ -246,6 +274,12 @@ export default {
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 	}
+	.bjType2{
+		background: url(../../public/images/max_home_bj1.jpg);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+	}
 	#web_bg{
 	  
 	}
@@ -255,13 +289,7 @@ export default {
 		overflow: hidden;
 	}
 	
-	@media screen and (max-height: 670px){
-		.bjType1{
-			//background-size: cover;
-			background: url(../../public/images/min_home_bj.jpg) no-repeat;
-			background-size: 100% 100%;
-		}
-	}
+	
     .mask_active{
         animation:pageShow 2s;
         -moz-animation:pageShow 2s;
@@ -279,4 +307,21 @@ export default {
 		  opacity: 0;
 		 }
     }
+	@media screen and (max-height: 670px){
+		.bjType1{
+			//background-size: cover;
+			background: url(../../public/images/min_home_bj.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.bjType2{
+			//background-size: cover;
+			background: url(../../public/images/min_home_bj1.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.video-style{
+			position: absolute;
+			left: 0;
+			top: 180px;
+		}
+	}
 </style>
