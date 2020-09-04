@@ -1,7 +1,11 @@
 <template>
   <transition name="scaleDown">
 	<div class="showPage" id="showPage">
-		哈哈哈哈
+
+<!--		七个孩子-->
+		<div class="userlist-child chenchen">
+
+		</div>
 	</div>
   </transition>
 </template>
@@ -148,5 +152,13 @@
 	    100%  {
 			background: #fff;
 		}
+	}
+
+	/*七个孩子*/
+	.userlist-child{
+		width: 100%;
+		height: 100%;
+		background: darkcyan;
+		position: relative;
 	}
 </style>
