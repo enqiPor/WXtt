@@ -296,7 +296,7 @@
 	#showPage{
 		width: 100%;
 		height: 100%;
-		background: url(../../public/img-bg/bg1.png) no-repeat;
+		background: url(../../public/img-bg/bg1.jpg) no-repeat;
 		background-size: 100% 100%;
 		-webkit-background-size: 100% 100%;
 		background-attachment: fixed;
