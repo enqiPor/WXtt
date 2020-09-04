@@ -1,6 +1,19 @@
 <template>
   <transition name="scaleDown">
 	<div class="showPage" id="showPage">
+        <div class="child-text">
+            <img src="../../public/images/dian.png" alt="">
+            <img src="../../public/images/ji.png" alt="">
+            <img src="../../public/images/tou.png" alt="">
+            <img src="../../public/images/xiang.png" alt="">
+            <img src="../../public/images/liao.png" alt="">
+            <img src="../../public/images/jie.png" alt="">
+            <img src="../../public/images/ta.png" alt="">
+            <img src="../../public/images/men.png" alt="">
+            <img src="../../public/images/de.png" alt="">
+            <img src="../../public/images/gu.png" alt="">
+            <img src="../../public/images/shi.png" alt="">
+        </div>
         <div class="airship"></div>
 <!--        包包-->
         <div class="box-baobao-qiu">
@@ -34,7 +47,8 @@
         <div class="child-box chenchen" :status="childStatus">
             <img :src=childImage alt="" class="chiild-image">
             <img src="../../public/images/guanbi.png" alt="" class="close-image" @click="closeChild">
-            <img src="../../public/images/fenxiang.png" alt="" class="share-image">
+            <img src="../../public/images/fenxiang.png" alt="" class="share-image" @click="shareFunc" v-show="shareHidden">
+            <img src="../../public/images/baocun.png" alt="" class="save-image" v-show="saveHidden">
         </div>
 
 	</div>
@@ -49,7 +63,9 @@
 	          startX: 0, // 鼠标开始点击的x坐标
 	          startY: 0 ,
               childStatus:'',
-              childImage:''
+              childImage:'',
+              shareHidden:true,
+              saveHidden:false
           }
 	  },
 	  methods: {
@@ -91,6 +107,19 @@
           closeChild(){
               $(".child-box").fadeOut();
               this.childImage = '';
+              this.shareHidden = true;
+              this.saveHidden = false;
+          },
+          shareFunc(){
+              var v = this.childStatus;
+              if (v == 1){
+                  this.childImage = require('../../public/images/baobao2.png');
+                  // $('.child-box').css("background","url(../../public/images/bag.png)");
+                  // $(".")
+                  this.shareHidden = false;
+                  this.saveHidden = true;
+              }
+              console.log(v)
           },
 	    addHandler (element, type, handler) {
 	        if (element.addEventListener) {
@@ -112,7 +141,7 @@
 	            var spanY = event.changedTouches[0].pageY - this.startY;
 	            // console.log('spanY', spanY)
 	            // if (spanY > 30) { // 向上
-				// 	this.$router.replace('/')
+				// 	this.$router.replace('/text')
 	            // }else if (spanY > -30){
 				// 	this.$router.replace('/childpage')
 				// }
@@ -207,6 +236,19 @@
 	.scaleDown-leave-active {
 		background: #000;
 	}
+    .child-text{
+        width: 320px;
+        display: flex;
+        position: absolute;
+        left: 50%;
+        margin-left: -160px;
+        top: 124px;
+        img{
+            display: block;
+            width: 28px;
+            height: 30px;
+        }
+    }
 	.showPage{
 		animation:pageShow 2s;
 		-moz-animation:pageShow 2s;
@@ -265,12 +307,14 @@
         left: 50%;
         margin-left: -54.5px;
     }
-    /*飞船*/
-    .box-baobao-qiu,.airship{
-
-
+    .save-image{
+        width: 161px;
+        height: 48.5px;
+        left: 50%;
+        margin-left: -80.5px;
+        bottom: 28px;
     }
-
+    /*飞船*/
     .airship{
         width: 154px;
         height: 153px;
@@ -297,6 +341,7 @@
         background-size: 100% 100%;
         top: -46px;
         right: 59px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-haohao-qiu{
         width: 61px;
@@ -315,6 +360,7 @@
         background-size: 100% 100%;
         top: -39px;
         left: -21px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-chenchen-qiu{
         width: 89.5px;
@@ -333,6 +379,7 @@
         background-size: 100% 100%;
         top: -52px;
         right: 65px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-maidou-qiu{
         width: 115px;
@@ -351,6 +398,7 @@
         background-size: 100% 100%;
         top: -58px;
         left: 64px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-jiangyi-qiu{
              width: 42px;
@@ -369,6 +417,7 @@
         background-size: 100% 100%;
         top: -50px;
         right: 25px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-rongrong-qiu{
              width: 55.5px;
@@ -387,6 +436,7 @@
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
+        animation: bounce-down 1.5s linear infinite;
     }
     .box-weili-qiu{
         width: 92px;
@@ -405,5 +455,6 @@
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
+        animation: bounce-down 1.5s linear infinite;
     }
 </style>
