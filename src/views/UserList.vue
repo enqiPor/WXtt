@@ -44,8 +44,10 @@
         </div>
 <!--        七个孩子海报-->
         <div class="child-box chenchen" :status="childStatus">
-            <img :src=childImage alt="" class="chiild-image">
-            <img src="../../public/images/guanbi.png" alt="" class="close-image" @click="closeChild">
+			<div class="chiild-image-box">
+				<img :src=childImage alt="" class="chiild-image">
+				<img src="../../public/images/guanbi.png" alt="" class="close-image" @click="closeChild">
+			</div>
             <img src="../../public/images/fenxiang.png" alt="" class="share-image" @click="shareFunc" v-show="shareHidden">
             <img src="../../public/images/baocun.png" alt="" class="save-image" v-show="saveHidden">
         </div>
@@ -60,6 +62,7 @@
 	      return {
 	          startX: 0, // 鼠标开始点击的x坐标
 	          startY: 0 ,
+			  maskActive:'',
               childStatus:'',
               childImage:'',
               shareHidden:true,
@@ -76,32 +79,32 @@
           baobaoHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 1;
-              this.childImage = require('../../public/images/baobao.png');
+              this.childImage = require('../../public/images/baobao.jpg');
           },
           haohaoHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 2;
-              this.childImage = require('../../public/images/haohao.png');
+              this.childImage = require('../../public/images/haohao.jpg');
           },
           maidouHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 4;
-              this.childImage = require('../../public/images/maidou.png');
+              this.childImage = require('../../public/images/maidou.jpg');
           },
           jiangyiHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 5;
-              this.childImage = require('../../public/images/jiangyi.png');
+              this.childImage = require('../../public/images/jiangyi.jpg');
           },
           rongrongHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 6;
-              this.childImage = require('../../public/images/rongrogn.png');
+              this.childImage = require('../../public/images/rongrogn.jpg');
           },
           weiliHeader(){
               $('.child-box').fadeIn();
               this.childStatus = 7;
-              this.childImage = require('../../public/images/weli.png');
+              this.childImage = require('../../public/images/weli.jpg');
           },
           closeChild(){
               $(".child-box").fadeOut();
@@ -203,11 +206,11 @@
 	      this.addHandler(element, 'touchmove', this.handleTouchEvent)
 		  
 		//微信分享
-		let imgUrl="";
+		let imgUrl=$("#hide_img").attr("src");
 		let weiXinDataObj=JSON.parse(window.localStorage.getItem("weiXinDataObj"));
 		let shareTitle="99公益日，一起为自闭症孩子助力免费课";//分享title内容
 		let shareCont="你的每一次转发，都有一个命运将被改变";//分享内容
-		let shareLink=weiXinDataObj.link;//分享链接
+		let shareLink='http://cece.ingcare.com/';//分享链接
 		wx.config({
 			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 			appId: weiXinDataObj.appId, // 必填，公众号的唯一标识
@@ -334,17 +337,21 @@
             position: absolute;
         }
     }
-    .chiild-image{
+	.chiild-image-box{
         width: 83%;
+		position: absolute;
         left: 50%;
         margin-left: -41.5%;
         top: 30px;
+	}
+    .chiild-image{
+		width: 100%;
     }
     .close-image{
         width: 22px;
         height: 22px;
-        top: 16px;
-        right: 16px;
+        top: -16px;
+        right: -22px;
     }
     .share-image{
         width: 109px;
@@ -503,4 +510,9 @@
         right: -23px;
         animation: bounce-down 2.4s linear infinite;
     }
+	@media screen and (min-height: 640px){
+		.chiild-image-box{
+			top: 60px;
+		}
+	}
 </style>

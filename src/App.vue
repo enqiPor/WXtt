@@ -1,4 +1,5 @@
 <template>  <div id="app">
+	  <img src="../public/images/wx.png" alt="" id="hide_img" style="display: none;">
 	  <audio src="../public/audio/childrem.mp3" id="music"  loop="loop" autoplay="autoplay" style="display: none;"></audio>    <router-view/>  </div></template><script>	export default{		created() {		  this.$axios.get('http://weixin.ingclass.org/webstage/weixin/common/login/getShareInfo.do?platCode=gh&current_url='+encodeURIComponent(window.location.href)).then(({data}) => {   			let weiXinDataObj={	    		  "appId":data.appId,	    		  "timestamp":data.timestamp,	    		  "nonceStr":data.nonceStr,	    		  "signature":data.signature,	    		  "link":data.link	      	} 			window.localStorage.setItem("weiXinDataObj",JSON.stringify(weiXinDataObj));		  })		},
 		mounted() {
 			var audio = document.getElementById("music"),

@@ -96,11 +96,11 @@ export default {
     }, { passive: false })
 	
 	//微信分享
-	let imgUrl="";
+	let imgUrl=$("#hide_img").attr("src");
 	let weiXinDataObj=JSON.parse(window.localStorage.getItem("weiXinDataObj"));
 	let shareTitle="99公益日，一起为自闭症孩子助力免费课";//分享title内容
 	let shareCont="你的每一次转发，都有一个命运将被改变";//分享内容
-	let shareLink=weiXinDataObj.link;//分享链接
+	let shareLink='http://cece.ingcare.com/';//分享链接
 	wx.config({
 		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		appId: weiXinDataObj.appId, // 必填，公众号的唯一标识
