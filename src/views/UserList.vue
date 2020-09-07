@@ -139,7 +139,7 @@
                   this.shareHidden = false;
                   this.saveHidden = true;
               }else if(v == 3){
-                  this.childImage = 'https://ingcare.oss-cn-beijing.aliyuncs.com/images/chenchen2.jpg';
+                  this.childImage = 'https://ingcare.oss-cn-beijing.aliyuncs.com/images/chenchen2.jpg?v=1';
                   // $('.child-box').css("background","url(https://ingcare.oss-cn-beijing.aliyuncs.com/images/bag.png)");
                   // $(".")
                   this.shareHidden = false;
