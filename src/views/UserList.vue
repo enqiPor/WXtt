@@ -16,7 +16,7 @@
         <div class="airship"></div>
 <!--        包包-->
         <div class="box-baobao-qiu">
-            <p class="header-baobao" @click="baobaoHeader"></p>
+<!--            <p class="header-baobao" @click="baobaoHeader"></p>-->
         </div>
 <!--        豪豪-->
         <div class="box-haohao-qiu">
@@ -40,7 +40,7 @@
         </div>
 <!--        威利-->
         <div class="box-weili-qiu">
-            <p class="header-weili" @click="weiliHeader"></p>
+            <p class="header-baobao" @click="baobaoHeader"></p>
         </div>
 <!--        七个孩子海报-->
         <div class="child-box chenchen" :status="childStatus">
@@ -412,27 +412,18 @@
         position: absolute;
         background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu1.png") no-repeat;
         background-size: 100% 100%;
-        right: 17px;
-        top: 55px;
+        right: 20px;
+        top: 42px;
     }
-    .header-baobao{
-        width: 42.5px;
-        height: 65.5px;
-        position: absolute;
-        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bao.png") no-repeat;
-        background-size: 100% 100%;
-        top: -46px;
-        right: 59px;
-        animation: bounce-down 2.8s linear infinite;
-    }
+
     .box-haohao-qiu{
         width: 61px;
         height: 77px;
         position: absolute;
         background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu2.png") no-repeat;
         background-size: 100% 100%;
-        top: 203px;
-        left: 82px;
+        top: 230px;
+        left: 101px;
     }
     .header-haohao{
         width: 43.5px;
@@ -450,8 +441,8 @@
         position: absolute;
         background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu3.png") no-repeat;
         background-size: 100% 100%;
-        top: 230px;
-        right: 21.5px;
+        top: 202px;
+        right: 30px;
     }
     .header-chenchen{
         width: 42.5px;
@@ -488,7 +479,7 @@
              position: absolute;
              background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu5.png") no-repeat;
              background-size: 100% 100%;
-             right: 23px;
+             right: 49px;
              top: 378.5px;
          }
     .header-jiangyi{
@@ -522,18 +513,18 @@
     }
     .box-weili-qiu{
         width: 92px;
-        height: 68.5px;
+        height: 87.5px;
         position: absolute;
         background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu7.png") no-repeat;
         background-size: 100% 100%;
         right: 51.5px;
-        bottom: 0;
+        bottom: 34px;
     }
-    .header-weili{
+    .header-baobao{
         width: 43px;
         height: 60px;
         position: absolute;
-        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/wei.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bao.png") no-repeat;
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
