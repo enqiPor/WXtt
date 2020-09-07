@@ -515,7 +515,7 @@
         width: 92px;
         height: 87.5px;
         position: absolute;
-        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu7.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/qiu7.png?v=1") no-repeat;
         background-size: 100% 100%;
         right: 51.5px;
         bottom: 34px;
@@ -524,7 +524,7 @@
         width: 43px;
         height: 60px;
         position: absolute;
-        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bao.png") no-repeat;
+        background: url("https://ingcare.oss-cn-beijing.aliyuncs.com/images/bao.png?v=1") no-repeat;
         background-size: 100% 100%;
         top: -56px;
         right: -23px;
