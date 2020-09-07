@@ -288,6 +288,8 @@ export default {
 	            var spanY = event.changedTouches[0].pageY - this.startY
 	            // console.log('spanY', spanY)
 	            if (spanY < -30) { // 向上
+					let audio = document.getElementById("music");
+					audio.play();
 					this.$router.replace('/text');
 	            }
 	            break
