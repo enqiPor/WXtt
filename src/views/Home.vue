@@ -36,6 +36,8 @@
 							   ref="videoPlayer"
 							   :playsinline="true"
 							   :options="playerOptions"
+							    @play="onPlayerPlay($event)"
+							    @pause="onPlayerPause($event)"
 				></video-player>
 			</div>
 			<div class="slide-uop">
@@ -93,13 +95,18 @@ export default {
 
 	}
   },
+  created() {
+	if(this.GetQueryString("typeHome") == "1"){
+		this.$router.replace('/');
+	}
+  },
   mounted () {
 	  if(window.innerHeight < 560){
 		 this.windowHeightClass='window-height-class' 
 	  }
 	  var thisObj=this;
 	  //监听视频是否播放
-	  let videoEvn=document.getElementById("video");
+	  let videoEvn=$("video")[0];
 	  let audio = document.getElementById("music");
 		  videoEvn.addEventListener('play', function(e) {
 		  				audio.pause();
@@ -160,7 +167,7 @@ export default {
 		  let imgUrl=$("#hide_img").attr("src");
 		  let shareTitle="99公益日，一起为自闭症孩子助力免费课";//分享title内容
 		  let shareCont="你的每一次转发，都有一个命运将被改变";//分享内容
-		  let shareLink=thisObj.link+"?type=1";//分享链接
+		  let shareLink=thisObj.link+"?typeHome=1";//分享链接
 		wx.config({
 			debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 			appId: thisObj.appId, // 必填，公众号的唯一标识
@@ -288,6 +295,21 @@ export default {
 		},
 		upPage(){
 			this.$router.replace('/text');
+		},
+		onPlayerPlay(player) {
+		// console.log('player play!', player)
+			let audio = document.getElementById("music");
+			audio.pause();
+		},
+		onPlayerPause(player) {
+		// console.log('player pause!', player)
+			let audio = document.getElementById("music");
+			audio.play();
+		},
+		GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
 		}
   }
 }
