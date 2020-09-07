@@ -149,13 +149,18 @@
 							thisObj.showType=false;
 							thisObj.$router.replace('/userlist');
 						},600);
-					},1000)
+					},2000)
 				}
-			},800)
+			},600)
+		},
+		GetQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null) return unescape(r[2]); return null;
 		}
 	  },
 	  created() {
-		  if(window.location.href.split("?type=")[1] == "1"){
+		  if(this.GetQueryString("type") == "1"){
 		  	this.$router.replace('/');
 		  }
 		  let highestTimeoutId = setTimeout(";");

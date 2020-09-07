@@ -64,9 +64,20 @@ export default {
 	  //监听视频是否播放
 	  let videoEvn=document.getElementById("video");
 	  let audio = document.getElementById("music");
-	  videoEvn.addEventListener('play', function(e) {
-				audio.pause();
-	  });
+		  videoEvn.addEventListener('play', function(e) {
+		  				audio.pause();
+		  });
+		   
+	  videoEvn.ontimeupdate = function() {
+		  //false 点击了播放  true 点击了暂停 
+		  if(videoEvn.paused == false){
+			  audio.pause();
+		  }else{
+			  audio.play();
+		  }
+		}
+		   
+
 	  videoEvn.addEventListener('pause', function(e) {
 	  			audio.play();
 	  });
@@ -212,7 +223,7 @@ export default {
 				  thisObj.addHandler(element, 'touchend', thisObj.handleTouchEvent)
 				  thisObj.addHandler(element, 'touchmove', thisObj.handleTouchEvent)
 		 	}
-		 },80)
+		 },200)
 	 },addHandler (element, type, handler) {
 	        if (element.addEventListener) {
 	          element.addEventListener(type, handler, false)
