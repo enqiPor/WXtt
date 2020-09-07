@@ -34,7 +34,7 @@
 			</div>
 			<div class="slide-uop">
 				<p></p>
-				<p class="slide-uop-d"></p>
+				<p class="slide-uop-d" @click="upPage"></p>
 			</div>
 		</div>
 		<div class="mask" :class="maskActive" v-show="showType"></div>
@@ -252,6 +252,9 @@ export default {
 	            }
 	            break
 	        }
+		},
+		upPage(){
+			this.$router.replace('/text');
 		}
   }
 }
