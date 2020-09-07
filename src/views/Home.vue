@@ -432,6 +432,12 @@ export default {
 			top: 180px;
 		}
 	}
+	@media screen and (min-width: 650px){
+		.video-style{
+			height: 300px!important;
+			top: 280px!important;
+		}
+	}
 	@media screen and (min-width: 400px){
 		.video-style{
 			height: 240px;
