@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="vide-box"  v-show="contTypeT">
-			<div class="video-style">
+			<div class="video-style" :class="windowHeightClass">
 				<video  x5-playsinline="" id="video" playsinline="" x-webkit-airplay="allow" style="object-fit:fill" poster="https://ingcare.oss-cn-beijing.aliyuncs.com/images/video_img.jpg" src="http://ingcare.oss-cn-beijing.aliyuncs.com/Seventeenthabandoned.mp4 " controls="controls"></video>
 			</div>
 			<div class="slide-uop">
@@ -56,10 +56,14 @@ export default {
 		timestamp:'',
 		nonceStr:'',
 		signature:'',
-		link:''
+		link:'',
+		windowHeightClass:''
 	}
   },
   mounted () {
+	  if(window.innerHeight < 560){
+		 this.windowHeightClass='window-height-class' 
+	  }
 	  var thisObj=this;
 	  //监听视频是否播放
 	  let videoEvn=document.getElementById("video");
@@ -432,5 +436,9 @@ export default {
 		.video-style{
 			height: 240px;
 		}
+	}
+	.window-height-class{
+		top: 150px!important;
+		height: 200px;
 	}
 </style>
